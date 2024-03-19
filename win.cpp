@@ -8,8 +8,6 @@ Win::Win(QWidget *parent):QWidget(parent)
     frame->setFrameShape(QFrame::Panel);
     inputLabel = new QLabel("Введите число:", this);
     inputEdit = new QLineEdit("", this);
-    StrValidator *v=new StrValidator(inputEdit);
-    inputEdit->setValidator(v);
     outputLabel = new QLabel("Результат:", this);
     outputEdit = new QLineEdit("",this);
     nextButton = new QPushButton("Следующее", this);
