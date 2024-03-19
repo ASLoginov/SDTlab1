@@ -1,14 +1,16 @@
 #ifndef WIN_H
 #define WIN_H
 
-#include <QMainWindow>
+#include "area.h"
 
-class win : public QMainWindow
+class win : public QWidget
 {
     Q_OBJECT
 
+protected:
+    Area * area; // область отображения рисунка
+    QPushButton * btn;
 public:
-    win(QWidget *parent = nullptr);
-    ~win();
+    win();
 };
 #endif // WIN_H
