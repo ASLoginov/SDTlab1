@@ -27,12 +27,9 @@ Win::Win(QWidget *parent):QWidget(parent)
     hLayout->addWidget(frame);
     hLayout->addLayout(vLayout2);
     begin();
-    connect(exitButton,SIGNAL(clicked(bool)),
-    this,SLOT(close()));
-    connect(nextButton,SIGNAL(clicked(bool)),
-    this,SLOT(begin()));
-    connect(inputEdit,SIGNAL(returnPressed()),
-    this,SLOT(calc()));
+    connect(exitButton, &QPushButton::clicked, this, &QWidget::close);
+    connect(nextButton, &QPushButton::clicked, this, &Win::begin);
+    connect(inputEdit, &QLineEdit::returnPressed, this, &Win::calc);
 }
 
 void Win::begin()
@@ -67,9 +64,7 @@ void Win::calc()
     else
     if (!str.isEmpty())
     {
-        QMessageBox msgBox(QMessageBox::Information,
-        "Возведение в квадрат.",
-        "Введено неверное значение.",
+        QMessageBox msgBox(QMessageBox::Information, "Возведение в квадрат.", "Введено неверное значение.",
         QMessageBox::Ok);
         msgBox.exec();
     }
